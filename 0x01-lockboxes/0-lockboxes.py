@@ -5,8 +5,7 @@
 def canUnlockAll(boxes):
     """Checks if all boxes can be unclocked"""
     if not boxes:
-        return False
-
+        return True
     if len(boxes) == 1:
         return True
 
