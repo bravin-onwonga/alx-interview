@@ -30,5 +30,7 @@ def open_boxes(boxes, keys, opened):
     idx = boxes.index(keys)
     key_index = opened.index(idx) - 1
     if key_index < 0:
+        if len(opened) == len(boxes):
+            return True
         return False
     return open_boxes(boxes, boxes[opened[key_index]], opened)
