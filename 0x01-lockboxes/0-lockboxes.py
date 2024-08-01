@@ -4,6 +4,12 @@
 
 def canUnlockAll(boxes):
     """Checks if all boxes can be unclocked"""
+    if not boxes:
+        return False
+
+    if len(boxes) == 1:
+        return True
+
     opened = [0]
 
     res = open_boxes(boxes, boxes[0], opened)
