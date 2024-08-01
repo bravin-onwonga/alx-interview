@@ -31,11 +31,4 @@ def open_boxes(boxes, keys, opened):
     key_index = opened.index(idx) - 1
     if key_index < 0:
         return False
-    if key_index == 0:
-        keys_found = 0
-        for key in keys:
-            if key not in opened:
-                keys_found += 1
-        if keys_found == 0:
-            return False
     return open_boxes(boxes, boxes[opened[key_index]], opened)
