@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Lockboxes puzzles"""
 
+
 def canUnlockAll(boxes):
     """Checks if all boxes can be unclocked"""
     opened = [0]
