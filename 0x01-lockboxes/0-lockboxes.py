@@ -13,7 +13,6 @@ def canUnlockAll(boxes):
     len_boxes = len(boxes)
 
     opened = [False] * len_boxes
-
     opened[0] = True
 
     keys = boxes[0]
@@ -23,7 +22,7 @@ def canUnlockAll(boxes):
             return True
         new_keys = []
         for key in keys:
-            if key >= 0 and key < len_boxes and opened[key] != True:
+            if key >= 0 and key < len_boxes and opened[key] is False:
                 opened[key] = True
                 new_keys.extend(boxes[key])
         keys = [i for i in set(new_keys)]
