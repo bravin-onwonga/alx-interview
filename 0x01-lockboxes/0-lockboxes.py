@@ -10,6 +10,9 @@ def canUnlockAll(boxes):
     if len(boxes) == 1:
         return True
 
+    if len(set(boxes[0])) == len(boxes):
+        return True
+
     opened = [0]
 
     res = open_boxes(boxes, boxes[0], opened)
