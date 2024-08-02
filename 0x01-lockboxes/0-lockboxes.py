@@ -10,30 +10,22 @@ def canUnlockAll(boxes):
     if len(boxes) == 1:
         return True
 
-    if len(set(boxes[0])) == len(boxes):
-        return True
+    len_boxes = len(boxes)
 
-    opened = [0]
+    opened = [False] * len_boxes
 
-    res = open_boxes(boxes, boxes[0], opened)
+    opened[0] = True
 
-    return res
+    keys = boxes[0]
 
-
-def open_boxes(boxes, keys, opened):
-    """Opens boxes"""
-    if len(opened) == len(boxes):
-        return True
-
-    for key in keys:
-        if key not in opened and key < len(boxes):
-            opened.append(key)
-            return open_boxes(boxes, boxes[key], opened)
-
-    idx = boxes.index(keys)
-    key_index = opened.index(idx) - 1
-    if key_index < 0:
-        if len(opened) == len(boxes):
+    while keys:
+        if all(opened):
             return True
-        return False
-    return open_boxes(boxes, boxes[opened[key_index]], opened)
+        new_keys = []
+        for key in keys:
+            if key >= 0 and key < len_boxes and opened[key] != True:
+                opened[key] = True
+                new_keys.extend(boxes[key])
+        keys = [i for i in set(new_keys)]
+
+    return all(opened)
