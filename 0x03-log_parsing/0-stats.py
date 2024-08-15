@@ -7,6 +7,7 @@ total_size = 0
 count = 0
 status_codes = {}
 
+
 def print_logs(status_codes, total_size):
     print(f'File size: {total_size}')
     for code, num in status_codes.items():
