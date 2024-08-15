@@ -7,9 +7,9 @@ Input will be in the form:
 import sys
 import signal
 
-total_size: int = 0
-count: int = 0
-status_codes: dict = {}
+total_size = 0
+count = 0
+status_codes = {}
 
 
 def print_logs(status_codes: dict, total_size: int) -> None:
@@ -24,14 +24,14 @@ def print_logs(status_codes: dict, total_size: int) -> None:
 
 for line in sys.stdin:
     """Loops through stdinput until CTRL-C is pressed"""
-    n: int = 10
-    my_lst: list = line.split(" ")
-    status_code: str = my_lst[-2]
+    n = 10
+    my_lst = line.split(" ")
+    status_code = my_lst[-2]
     if status_codes.get(status_code):
         status_codes[status_code] += 1
     else:
         status_codes[status_code] = 1
-    file_size: int = int(my_lst[-1])
+    file_size = int(my_lst[-1])
     total_size += file_size
     count += 1
     if count == 10:
