@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""Parsing data into a particular format
+"""
+Parsing data into a particular format
 Input will be in the form:
 <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+Print after 10 lines are read and/or after CTRL-C is pressed
 """
 
 import sys
@@ -13,7 +15,9 @@ status_codes = {}
 
 
 def print_logs(status_codes: dict, total_size: int) -> None:
-    """Prints the logs passed"""
+    """Prints the logs passed
+    Print after 10 lines are read and/or after CTRL-C is pressed
+    Status codes are sorted"""
     print(f'File size: {total_size}')
     codes = list(status_codes.keys())
     codes.sort()
@@ -23,7 +27,9 @@ def print_logs(status_codes: dict, total_size: int) -> None:
 
 
 for line in sys.stdin:
-    """Loops through stdinput until CTRL-C is pressed"""
+    """Loops through stdinput until CTRL-C is pressed
+    Returns nothing
+    """
     n = 10
     my_lst = line.split(" ")
     status_code = my_lst[-2]
