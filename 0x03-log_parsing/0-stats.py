@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""Parsing data into a particular format
+"""Module to parse data into a particular format
 Input will be in the form:
-<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
 Print after 10 lines are read and/or after CTRL-C is pressed"""
 
 import sys
