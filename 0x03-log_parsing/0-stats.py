@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Parsing data into a particular format"""
+"""Parsing data into a particular format
+Input will be in the form:
+<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+"""
 
 import sys
 import signal
@@ -12,7 +15,10 @@ status_codes: dict = {}
 def print_logs(status_codes: dict, total_size: int) -> None:
     """Prints the logs passed"""
     print(f'File size: {total_size}')
-    for code, num in status_codes.items():
+    codes = list(status_codes.keys())
+    codes.sort()
+    sorted_dict = {i: status_codes[i] for i in codes}
+    for code, num in sorted_dict.items():
         print(f'{code}: {num}')
 
 
