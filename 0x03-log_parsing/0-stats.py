@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module to parse data into a particular format
-Print after 10 lines are read and/or after CTRL-C is pressed
+"""
+Module to parse data into a particular format
 """
 
 import sys
