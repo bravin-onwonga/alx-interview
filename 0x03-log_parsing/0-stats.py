@@ -30,19 +30,19 @@ if __name__ == '__main__':
             """Loops through stdinput until CTRL-C is pressed
             Returns nothing
             """
-            n = 10
             my_lst = line.split(" ")
-            status_code = my_lst[-2]
-            if status_codes.get(status_code):
-                status_codes[status_code] += 1
-            else:
-                status_codes[status_code] = 1
-            file_size = int(my_lst[-1])
-            total_size += file_size
-            count += 1
-            if count == 10:
-                print_logs(status_codes, total_size)
-                count = 0
+            if len(my_lst) == 9:
+                status_code = my_lst[-2]
+                if status_codes.get(status_code):
+                    status_codes[status_code] += 1
+                else:
+                    status_codes[status_code] = 1
+                file_size = int(my_lst[-1])
+                total_size += file_size
+                count += 1
+                if count == 10:
+                    print_logs(status_codes, total_size)
+                    count = 0
     except KeyboardInterrupt:
         print_logs(status_codes, total_size)
         raise
