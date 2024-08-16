@@ -20,7 +20,6 @@ if __name__ == '__main__':
         Returns nothing
         """
         print(f'File size: {total_size}')
-        codes = list(status_codes.keys())
         for code, num in sorted(status_codes.items()):
             print(f'{code}: {num}')
     try:
@@ -30,19 +29,21 @@ if __name__ == '__main__':
             """
             my_lst = line.split(" ")
             if len(my_lst) == 9:
-                status_code = my_lst[-2]
-                if status_codes.get(status_code):
-                    status_codes[status_code] += 1
-                else:
-                    status_codes[status_code] = 1
-                file_size = int(my_lst[-1])
-                total_size += file_size
-                count += 1
-                if count == 10:
-                    print_logs(status_codes, total_size)
-                    count = 0
+                try:
+                    status_code = my_lst[-2]
+                    if status_codes.get(status_code):
+                        status_codes[status_code] += 1
+                    else:
+                        status_codes[status_code] = 1
+                    file_size = int(my_lst[-1])
+                    total_size += file_size
+                    count += 1
+                    if count == 10:
+                        print_logs(status_codes, total_size)
+                        count = 0
+                except BaseException:
+                    pass
+        print_logs(status_codes, total_size)
     except KeyboardInterrupt:
         print_logs(status_codes, total_size)
         raise
-    except Exception as e:
-        pass
