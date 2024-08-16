@@ -43,5 +43,6 @@ if __name__ == '__main__':
         if count == 10:
             print_logs(status_codes, total_size)
             count = 0
+            status_codes = {}
 
     signal.signal(signal.SIGINT)
