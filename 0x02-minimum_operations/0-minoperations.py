@@ -14,19 +14,21 @@ def minOperations(n):
         return 1
     try:
         while (len(my_str) < n):
+            if (len(my_str) >= n):
+                break
             cpy = copyAll(my_str)
             count += 1
             my_str = paste(my_str, cpy)
             count += 1
             if (len(my_str) >= n):
                 break
-            if (n / len(my_str) <= 2) and count > 0:
-                cpy = copyAll(my_str)
-                count += 1
             my_str = paste(my_str, cpy)
             count += 1
             if (len(my_str) >= n):
                 break
+            if (len(my_str) + len(cpy) >= n):
+                my_str = paste(my_str, cpy)
+                count += 1
         return count
     except BaseException:
         return 0
