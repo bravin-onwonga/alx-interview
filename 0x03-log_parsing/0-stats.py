@@ -46,6 +46,7 @@ if __name__ == '__main__':
                         count = 0
                 except BaseException:
                     pass
+        print_logs(status_codes, total_size)
     except KeyboardInterrupt:
         print_logs(status_codes, total_size)
         raise
