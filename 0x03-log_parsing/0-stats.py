@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Module to parse data into a particular format
+"""Reads stdin line by line and computes metrics
 """
 
 import sys
