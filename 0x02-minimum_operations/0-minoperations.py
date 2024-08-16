@@ -1,4 +1,4 @@
-  #!/usr/bin/python3
+#!/usr/bin/python3
 """Calculates the minimum number of operations
 to achieve n characters in a string"""
 
