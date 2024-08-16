@@ -27,7 +27,9 @@ def minOperations(n):
             count += 1
             if (len(my_str) >= n):
                 break
-        return count
+        if (len(my_str) == n):
+            return count
+        return 0
     except BaseException:
         return 0
 
