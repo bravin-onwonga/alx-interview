@@ -27,6 +27,7 @@ def copyAll(str: str) -> str:
     return str_cpy
 
 def find_operations(str: str, n: int, count: int) -> int:
+    """Recursive function to find the number of operations"""
     if (len(str) == n):
         return count
     if (len(str) > n):
