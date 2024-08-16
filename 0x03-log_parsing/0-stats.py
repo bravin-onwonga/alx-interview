@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module to parse data into a particular format
-"""
+""" Module to parse data into a particular format """
 
 import sys
 import signal
