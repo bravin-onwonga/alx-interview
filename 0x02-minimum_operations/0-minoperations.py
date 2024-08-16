@@ -3,50 +3,36 @@
 to achieve n characters in a string"""
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """Function that returns the minimum number of operations to
     achieve n characters"""
     my_str = "H"
-
     count = 0
 
-    if n <= 1:
-        return 1
-    try:
-        while (len(my_str) < n):
-            cpy = copyAll(my_str)
-            count += 1
-            my_str = paste(my_str, cpy)
-            count += 1
-            if (len(my_str) >= n):
-                break
-            if ((n / 2) >= (len(my_str))):
-                cpy = copyAll(my_str)
-                count += 1
-            my_str = paste(my_str, cpy)
-            count += 1
-            if (len(my_str) >= n):
-                break
-        if (len(my_str) == n):
-            return count
+
+    if n <= 0:
         return 0
+    try:
+        count = find_operations(my_str, n, count)
+        return count
     except BaseException:
         return 0
 
 
-def copyAll(str):
+def copyAll(str: str) -> str:
     """Creates a copy of str"""
     str_cpy = ""
     for c in str:
         str_cpy += c
     return str_cpy
 
+def find_operations(str: str, n: int, count: int) -> int:
+    if (len(str) == n):
+        return count
+    if (len(str) > n):
+        return 0
+    cpy = copyAll(str)
+    str = str + cpy
+    str = str + cpy
+    return (find_operations(str, n, count + 1))
 
-def paste(str1, str2):
-    """Concatenates two strings"""
-    new_str = ""
-    for c in str1:
-        new_str += c
-    for c in str2:
-        new_str += c
-    return new_str
