@@ -21,9 +21,7 @@ if __name__ == '__main__':
         """
         print(f'File size: {total_size}')
         codes = list(status_codes.keys())
-        codes.sort()
-        sorted_dict = {i: status_codes[i] for i in codes}
-        for code, num in sorted_dict.items():
+        for code, num in sorted(status_codes.items()):
             print(f'{code}: {num}')
     try:
         for line in sys.stdin:
@@ -43,7 +41,6 @@ if __name__ == '__main__':
                 if count == 10:
                     print_logs(status_codes, total_size)
                     count = 0
-                    status_codes = {}
     except KeyboardInterrupt:
         print_logs(status_codes, total_size)
         raise
