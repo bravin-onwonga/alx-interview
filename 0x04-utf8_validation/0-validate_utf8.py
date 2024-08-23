@@ -18,6 +18,6 @@ def validUTF8(data):
             idx = 0
             while bin[idx] == '1':
                 idx += 1
-            if idx > 3:
+            if idx > 4:
                 return False
     return True
