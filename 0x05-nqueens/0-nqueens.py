@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ N queens """
 import sys
-from typing import List
+from typing import List, Tuple
 
 
 """
@@ -14,7 +14,6 @@ If not use another beginning point
 If you can fill that row countinue
 append the box to lst
 If you have made n entries return lst
-
 """
 
 
@@ -96,7 +95,8 @@ def find_all_diags(box: List[int], n: int) -> List[List]:
     return diagonals
 
 
-def make_entries(board: List[List], entries: int, n: int, lst: List[List], box: List[int]) -> List[List]:
+def make_entries(board: List[List], entries: int, n: int,
+                 lst: List[List], box: List[int]) -> Tuple[List[List], int]:
     if entries == n:
         return (lst, entries)
 
