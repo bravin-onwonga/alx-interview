@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const request = require('request');
+const axios = require('axios');
 
 const film = process.argv;
 
@@ -10,20 +10,17 @@ if (film.length < 3) {
 
 const url = `https://swapi-api.alx-tools.com/api/films/${film[2]}/`;
 
-request(url, (err, res, body) => {
-  if (err) console.log(err);
+axios.get(url).then((res) => {
+  const data = res.data;
+  const charactersUrls = data.characters;
 
-  body = JSON.parse(body);
-
-  const characterUrls = body.characters;
-
-  for (const characterUrl of characterUrls) {
-    request(characterUrl, (err, res, body) => {
-      if (err) console.log(err);
-
-      body = JSON.parse(body);
-
-      console.log(body.name);
+  for (const characterUrl of charactersUrls) {
+    axios.get(characterUrl).then((res) => {
+      console.log(res.data.name);
+    }).catch((error) => {
+      console.log(error);
     });
   }
+}).catch((error) => {
+  console.log(error);
 });
