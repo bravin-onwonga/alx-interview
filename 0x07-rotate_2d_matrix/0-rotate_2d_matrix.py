@@ -13,8 +13,10 @@ def rotate_2d_matrix(matrix):
         Rotated matrix
     """
     n = len(matrix[0])
+
+    j = len(matrix)
     k = 0
-    while (k < n):
+    while (k < j):
         for x in range(0, int(n / 2)):
             for y in range(x, n-x-1):
                 tmp = matrix[x][y]
