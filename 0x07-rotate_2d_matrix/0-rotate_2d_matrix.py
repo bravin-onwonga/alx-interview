@@ -14,22 +14,15 @@ def rotate_2d_matrix(matrix):
     """
     n = len(matrix[0])
 
-    j = len(matrix)
-    k = 0
-    while (k < j):
-        x = n // 2
-        while (x >= 0):
-            y = x
-            while y >= 0:
-                tmp = matrix[x][y]
-
-                matrix[x][y] = matrix[y][n-1-x]
-
-                matrix[y][n-1-x] = matrix[n-1-x][n-1-y]
-
-                matrix[n-1-x][n-1-y] = matrix[n-1-y][x]
-
-                matrix[n-1-y][x] = tmp
-                y -= 1
-            x -= 1
-        k += 1
+    if len(matrix) != len(matrix[0]):
+        return
+    n = len(matrix)
+    for i in range(n // 2):
+        x, y, slot = i, n - 1 - i, 0
+        for i in range(x, y):
+            top = matrix[x][i]
+            matrix[x][i] = matrix[y - slot][x]
+            matrix[y - slot][x] = matrix[y][y - slot]
+            matrix[y][y - slot] = matrix[i][y]
+            matrix[i][y] = top
+            slot += 1
