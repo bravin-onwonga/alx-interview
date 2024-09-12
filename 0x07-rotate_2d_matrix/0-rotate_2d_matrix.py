@@ -29,4 +29,3 @@ def rotate_2d_matrix(matrix):
 
                 matrix[n-1-y][x] = tmp
         k += 1
-        
