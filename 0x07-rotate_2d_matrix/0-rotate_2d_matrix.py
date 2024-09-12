@@ -17,8 +17,10 @@ def rotate_2d_matrix(matrix):
     j = len(matrix)
     k = 0
     while (k < j):
-        for x in range(0, int(n / 2)):
-            for y in range(x, n-x-1):
+        x = n // 2
+        while (x >= 0):
+            y = x
+            while y >= 0:
                 tmp = matrix[x][y]
 
                 matrix[x][y] = matrix[y][n-1-x]
@@ -28,4 +30,6 @@ def rotate_2d_matrix(matrix):
                 matrix[n-1-x][n-1-y] = matrix[n-1-y][x]
 
                 matrix[n-1-y][x] = tmp
+                y -= 1
+            x -= 1
         k += 1
