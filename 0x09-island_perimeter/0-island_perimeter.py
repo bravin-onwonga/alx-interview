@@ -1,28 +1,18 @@
 #!/usr/bin/python3
-"""
-Handling list (2D Matrix)
-This module assumes:
-    Each cell is square, with a side length of 1
-    Cells are connected horizontally/vertically (not diagonally).
-    grid is rectangular, with its width and height not exceeding 100
-    The grid is completely surrounded by water
-    There is only one island (or nothing).
-    The island doesn’t have “lakes”
-"""
+""" Handling list (2D Matrix) """
 
 from typing import List
 
 
 def check_cells(grid: List[List[int]], i: int, j: int) -> int:
-    """Calculates the perimeter of a cell
+    """ Calculates the perimeter of a cell
     Params:
         grid - 2D matrix
         i - row index
         j - column index
     Returns:
         perimeter of cell
-        whether to start or stop
-    """
+        whether to start or stop """
     cell_perimeter = 0
 
     # top
@@ -44,14 +34,13 @@ def check_cells(grid: List[List[int]], i: int, j: int) -> int:
 
 
 def island_perimeter(grid: List[List[int]]) -> int:
-    """Calculates the perimeter of an island
+    """ Calculates the perimeter of an island
     Params:
         grid - a list of list of integers:
     0 represents water
     1 represents land
     Returns:
-        perimeter of the island
-    """
+        perimeter of the island """
     perimeter = 0
 
     for i in range(len(grid)):
