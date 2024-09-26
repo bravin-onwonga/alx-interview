@@ -17,19 +17,15 @@ def check_cells(grid: List[List[int]], i: int, j: int) -> int:
         whether to start or stop """
     cell_perimeter = 0
 
-    # top
     if i == 0 or grid[i - 1][j] == 0:
         cell_perimeter += 1
 
-    # left
     if j == 0 or grid[i][j - 1] == 0:
         cell_perimeter += 1
 
-    # right
     if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:
         cell_perimeter += 1
 
-    # bottom
     if i == len(grid) - 1 or grid[i + 1][j] == 0:
         cell_perimeter += 1
     return cell_perimeter
