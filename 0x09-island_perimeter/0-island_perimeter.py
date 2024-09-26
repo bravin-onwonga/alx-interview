@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Handling list embeded in lists
+"""Handling list (2D Matrix)
 This module assumes:
     Each cell is square, with a side length of 1
     Cells are connected horizontally/vertically (not diagonally).
