@@ -3,10 +3,8 @@
 Handling list (2D Matrix)
 """
 
-from typing import List
 
-
-def check_cells(grid: List[List[int]], i: int, j: int) -> int:
+def check_cells(grid, i, j):
     """ Calculates the perimeter of a cell
     Params:
         grid - 2D matrix
@@ -31,7 +29,7 @@ def check_cells(grid: List[List[int]], i: int, j: int) -> int:
     return cell_perimeter
 
 
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid):
     """ Calculates the perimeter of an island
     Params:
         grid - a list of list of integers:
