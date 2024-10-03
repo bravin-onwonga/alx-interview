@@ -4,7 +4,7 @@ This project covers these concepts:
 
 ## Prime Numbers
 This are numbers only divisible by one and the number itself.
-While there are a number of methods to optimally find prime numbers in this project the method used will be  ```[Sieve of Eratosthenes](https://www.geeksforgeeks.org/sieve-of-eratosthenes/)```.
+While there are a number of methods to optimally find prime numbers in this project the method used will be  [Sieve of Eratosthenes](https://www.geeksforgeeks.org/sieve-of-eratosthenes/).
 
 ### Sieve of Eratosthenes
 This method is the most effecient for finding prime numbers when ```n``` is less that 10 million. 
@@ -40,7 +40,7 @@ Lists can also be accessed through loops i.e. ```for``` and ```while``` loops.
 
 File | Description
 ---- | ------------
-[0-prime_game.py]() | Determines a winner between two contesants who pick out prime numbers lesser or equal to a number
+[0-prime_game.py](https://github.com/bravin-onwonga/alx-interview/blob/main/0x0A-primegame/0-prime_game.py) | Determines a winner between two contesants who pick out prime numbers lesser or equal to a number
 
 ## Requirements:
 - Allowed editors:  ```vi```, ```vim```, ```emacs```

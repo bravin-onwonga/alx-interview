@@ -51,6 +51,7 @@ def isWinner(x, nums):
 
     while (round < x):
         if round >= len(nums):
+            ben_wins += 1
             return who_won(maria_wins, ben_wins)
         n = nums[round]
 
