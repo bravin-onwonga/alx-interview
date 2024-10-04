@@ -74,8 +74,8 @@ def isWinner(x, nums):
             if (max_prime and n < max_prime):
                 keys = sorted(memo.keys())
                 for i in range(len(keys)):
-                    if keys[i] < n and keys[i + 1] > n:
-                        largest_saved = keys[i + 1]
+                    if keys[i] > n:
+                        largest_saved = keys[i]
                         break
                 primes = [num for num in memo[largest_saved] if num <= n]
                 memo[n] = primes
