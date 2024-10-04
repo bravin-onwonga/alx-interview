@@ -49,6 +49,21 @@ def isWinner(x, nums):
 
     memo = {}
 
+    largest_num = max(nums)
+
+    primes = []
+    my_lst = [True for i in range(largest_num+1)]
+    p = 2
+    while (p * p <= largest_num):
+        if my_lst[p]:
+            for i in range(p * p, largest_num + 1, p):
+                my_lst[i] = False
+        p += 1
+    for i in range(2, largest_num + 1):
+        if my_lst[i]:
+            primes.append(i)
+    memo[largest_num] = primes
+
     while (round < x):
         if round >= len(nums):
             ben_wins += 1
@@ -83,18 +98,6 @@ def isWinner(x, nums):
                     ben_wins += 1
                 else:
                     maria_wins += 1
-            else:
-                primes = []
-                my_lst = [True for i in range(n+1)]
-                p = 2
-                while (p * p <= n):
-                    if my_lst[p]:
-                        for i in range(p * p, n + 1, p):
-                            my_lst[i] = False
-                    p += 1
-                for i in range(2, n + 1):
-                    if my_lst[i]:
-                        primes.append(i)
-                memo[n] = primes
         round += 1
+    print(maria_wins, ben_wins)
     return who_won(maria_wins, ben_wins)
