@@ -52,7 +52,7 @@ def isWinner(x, nums):
     largest_num = max(nums)
 
     primes = []
-    my_lst = [True for i in range(largest_num+1)]
+    my_lst = [True for i in range(largest_num + 1)]
     p = 2
     while (p * p <= largest_num):
         if my_lst[p]:
@@ -99,5 +99,4 @@ def isWinner(x, nums):
                 else:
                     maria_wins += 1
         round += 1
-    print(maria_wins, ben_wins)
     return who_won(maria_wins, ben_wins)
